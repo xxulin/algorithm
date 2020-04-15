@@ -7,7 +7,7 @@ package algorithm;
  * quick_sort(p…r) = quick_sort(p…q-1) + quick_sort(q+1… r)
  * p >= r
  */
-public class Quicksort {
+public class QuickSort {
 
 	public static void main(String[] args) {
 		
