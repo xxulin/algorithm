@@ -42,12 +42,17 @@ public class CountingSort {
 			bucket[x] = bucket[x - 1] + bucket[x];
 		}
 		
-		for(int i = 0; i < a.length; i++) {
-			//待排序数组a中的数据，对应桶bucket的下标
-			//桶bucket中实际存放该数据从前到后位于第几位
-			//按照位数存放于最终数组中，并将个数减1
+//		for(int i = 0; i < a.length; i++) {
+//			//待排序数组a中的数据，对应桶bucket的下标
+//			//桶bucket中实际存放该数据从前到后位于第几位
+//			//按照位数存放于最终数组中，并将个数减1
+//			finalInt[--bucket[a[i]]] = a[i];
+//			
+//		}
+		
+		//靠，这里为了保证排序的稳定性需从后往前遍历，细节=  =
+		for(int i = a.length - 1; i >= 0; i--) {
 			finalInt[--bucket[a[i]]] = a[i];
-			
 		}
 		
 		return finalInt;
